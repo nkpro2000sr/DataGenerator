@@ -14,10 +14,10 @@ with similar approach to [tf.keras.preprocessing.image.ImageDataGenerator](https
 ```python3
 def p2d(path, DataIterator):
    """
-   $path : path of file to be converted to numpy array (data)
+   $path : string = path of file to be converted to numpy array (data)
    $DataIterator : instance of DataGenerator.flow_from_directory
      from where we get some details like required shape of data
-   $return : numpy array (data) extracted from the file (with given path)
+   $return : numpy.array = data extracted from the file (with given path)
    """
    with open(path,'rb') as file :
        data = Extract(file.read())
@@ -28,10 +28,10 @@ def p2d(path, DataIterator):
 ```python3
 def d2D(data, DataIterator):
     """
-    $data : extracted non-preprocessed data (numpy array)
+    $data : numpy.array = extracted non-preprocessed data (numpy array)
     $DataIterator : instance of DataGenerator.flow_from_directory
      from where we get some details like required shape of data
-    $return : preprocessed numpy array
+    $return : numpy.array = preprocessed numpy array
     """
     data = Preprocess(data)
     # do other stuff
